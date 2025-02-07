@@ -1,0 +1,49 @@
+.feed {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-column-gap: 16px;
+  grid-row-gap: 30px;
+  margin-top: 15px;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.card h2 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #0f0f0f;
+  margin: 5px 0;
+}
+
+.card h3 {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #606060;
+  margin: 6px 0;
+}
+
+.card p {
+  font-size: 1.4rem;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 20px auto;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

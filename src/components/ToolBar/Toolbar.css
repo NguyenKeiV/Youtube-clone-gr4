@@ -1,0 +1,74 @@
+.tool-bar {
+    display: flex;
+    margin: 0 12px;
+    position: sticky;
+  }
+  
+  .tool-button {
+    padding: 8px 12px;
+    border-radius: 8px;
+    flex-shrink: 0;
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    
+  }
+  
+  .tool-button:hover {
+    background-color:rgb(219, 214, 214);
+  }
+  
+  .slider-container {
+    display: flex;
+    margin: 0 32px;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    border-radius: 8px;
+  }
+  
+  .slider-container::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .slider-content {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .category-button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 8px;
+    flex-shrink: 0;
+    font-size: 15px;
+    font-weight: 500;
+    
+  }
+  .category-button-home {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 8px;
+    flex-shrink: 0;
+    font-size: 15px;
+    font-weight: 500;
+    
+  }
+  .category-button.active {
+    
+    color: black;
+  }
+  .category-button-home.active {
+    background-color: black;
+    color: white;
+  }
+  .category-button.active {
+    background-color: ##f1f1f1;
+    
+  }
+  
+  .category-button.active:hover {
+    background-color:rgb(224, 221, 221);
+  }
+  
