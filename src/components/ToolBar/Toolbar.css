@@ -1,7 +1,11 @@
-.tool-bar {
+.tool-bar{
     display: flex;
-    margin: 0 12px;
-    position: sticky;
+    background-color: white;
+    position: fixed;
+    width: 83%;
+    height: 5rem;
+    top: 50px;
+    z-index: 1500;
   }
   
   .tool-button {
@@ -20,7 +24,7 @@
   
   .slider-container {
     display: flex;
-    margin: 0 32px;
+    
     overflow-x: scroll;
     scroll-behavior: smooth;
     border-radius: 8px;

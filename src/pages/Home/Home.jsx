@@ -14,9 +14,16 @@ export default function Home({ sidebar }) {
         setCategory={setCategory}
       />
 
-      <div className={`container ${sidebar ? "" : "large-container"}`}>
-        <Toolbar className="toolbar" category={category} setCategory={setCategory} />
-        <Feed category={category} />
+      <div className={`container ${sidebar ? "" : "large-container"} `}>
+        
+          <div className="toolbar">
+            <Toolbar category={category} setCategory={setCategory} />
+          </div>
+
+          <div className="feed-container">
+            <Feed category={category} />
+          </div>
+        
       </div>
     </div>
   );
