@@ -19,11 +19,9 @@ export default function Home({ sidebar }) {
           <div className="toolbar">
             <Toolbar category={category} setCategory={setCategory} />
           </div>
-
           <div className="feed-container">
             <Feed category={category} />
-          </div>
-        
+          </div>  
       </div>
     </div>
   );

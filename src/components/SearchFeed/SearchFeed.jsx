@@ -3,7 +3,7 @@ import "./SearchFeed.css";
 import { API_KEY, value_converter } from "../../data";
 import { useEffect, useState } from "react";
 import moment from "moment";
-import VideoS from "../../pages/Video copy/VideoS";
+import Sidebar from "../Sidebar/Sidebar";
 
 export default function SearchFeed() {
   const [data, setData] = useState([]);
@@ -24,6 +24,7 @@ export default function SearchFeed() {
 
   return (
     <div className="search-feed">
+      
       {data.map((item, index) => {
         return (
           <Link
