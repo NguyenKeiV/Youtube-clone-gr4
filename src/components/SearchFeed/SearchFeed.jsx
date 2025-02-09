@@ -5,9 +5,13 @@ import { useEffect, useState } from "react";
 import moment from "moment";
 import Sidebar from "../Sidebar/Sidebar";
 
-export default function SearchFeed() {
+// import VideoS from "../../pages/Video copy/VideoS";
+
+
+export default function SearchFeed({ sidebar, category, setCategory }) {
   const [data, setData] = useState([]);
   const { searchTerm, videoId } = useParams();
+
   const fetchData = async () => {
     const videoList_url = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${encodeURIComponent(
       searchTerm
@@ -23,22 +27,32 @@ export default function SearchFeed() {
   }, [searchTerm]);
 
   return (
-    <div className="search-feed">
-      
-      {data.map((item, index) => {
-        return (
-          <Link
-            key={index}
-            to={`video/general/${item.id.videoId}`}
-            className="card"
-          >
-            <img src={item.snippet.thumbnails.medium.url} alt="" />
-            <h2>{item.snippet.title}</h2>
-            <h3>{item.snippet.channelTitle}</h3>
-            <p>{moment(item.snippet.publishedAt).fromNow()}</p>
-          </Link>
-        );
-      })}
+
+    <div>
+      <Sidebar
+        sidebar={sidebar}
+        category={category}
+        setCategory={setCategory}
+      />
+
+      <div className={`container ${sidebar ? "" : "large-container"} `}>
+        <div className="feed-container">
+          <div className="search-feed">
+            {data.map((item, index) => (
+              <Link
+                key={index}
+                to={`/video/general/${item.id.videoId}`}
+                className="card"
+              >
+                <img src={item.snippet.thumbnails.medium.url} alt="" />
+                <h2>{item.snippet.title}</h2>
+                <h3>{item.snippet.channelTitle}</h3>
+                <p>{moment(item.snippet.publishedAt).fromNow()}</p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
