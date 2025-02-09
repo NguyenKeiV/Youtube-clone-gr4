@@ -4,7 +4,9 @@ import { API_KEY, value_converter } from "../../data";
 import { useEffect, useState } from "react";
 import moment from "moment";
 import Sidebar from "../Sidebar/Sidebar";
+
 // import VideoS from "../../pages/Video copy/VideoS";
+
 
 export default function SearchFeed({ sidebar, category, setCategory }) {
   const [data, setData] = useState([]);
@@ -25,6 +27,7 @@ export default function SearchFeed({ sidebar, category, setCategory }) {
   }, [searchTerm]);
 
   return (
+
     <div>
       <Sidebar
         sidebar={sidebar}

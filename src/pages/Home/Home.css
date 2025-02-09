@@ -21,6 +21,5 @@
 }
 
 .feed-container {
-  flex: 1; /* Chiếm phần còn lại của màn hình */
   padding-top: 3rem;
 }
