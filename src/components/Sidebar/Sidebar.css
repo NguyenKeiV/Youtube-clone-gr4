@@ -1,124 +1,120 @@
 .sidebar {
-    background: #fff;
-    width: 15%;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    padding-left: 1%;
-    padding-top: 8rem;
-    box-sizing: border-box;
-  
-  }
-  
-  .sidebar:hover {
-      overflow-y: auto; /* Thêm dòng này */
-      scrollbar-width: thin; /* Tuỳ chỉnh độ dày thanh cuộn trên Firefox */
-      scrollbar-color: #ccc transparent; /* Tuỳ chỉnh màu trên Firefox */
-  }
-  
-  .shortcut-links img {
-    width: 2rem;
-    margin-right: 2rem;
-    
-  }
-  .side-link {
-    display: flex;
-    align-items: center;
-    padding: 15px 10px; 
-    border-radius: 25px; 
-  }
-  .side-link-home {
-    display: flex;
-    align-items: center;   
-    border-radius: 25px;
-    height: 5rem;
-    padding: 15px 10px;
-  }
-  .sidebar hr {
-    border: 0;
-    height: 1px;
-    background: #ccc;
-    width: 85%;
-  }
-  .shortcut-links h3{
-    font-size: 16px;
-      margin: 1rem 1rem 0;
-      color: black;
-  }
-  .subscribed-list h3 {
-      font-size: 16px;
-      margin: 1rem 1rem 0;
-      color: black;
-  }
-  
-  .subscribed-list img {
-      width: 2.5rem;
-      border-radius: 50%;
-      margin-right: 2rem;
-  }
-  
-  .small-sidebar{
-      width: 5%
-  }
-  
-  .small-sidebar p{
-      display: none
-  }
-  
-  .small-sidebar h3 {
-      display: none
-  }
-  
-  .small-sidebar hr {
-      width: 50%;
-      margin-bottom: 2.5rem
-  }
-  
-  .side-link-home.active {
-      background:rgb(240, 237, 237);
-      width: 85%;
-      border-radius: 1rem;
-      padding: 0.6rem 1rem;
-      transition: 0.2s
-  
-  }
-  
-  .side-link:hover{
-      background:rgb(240, 237, 237);
-      width: 85%;
-      border-radius: 1rem;
-      
-  }
-  .side-link-home:hover{
-    background:rgb(205, 203, 203);
-    width: 85%;
-    border-radius: 1rem;  
+  background: #fff;
+  width: 15%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  padding-left: 1%;
+  padding-top: 8rem;
+  box-sizing: border-box;
 }
 
+.sidebar:hover {
+  overflow-y: auto; /* Thêm dòng này */
+  scrollbar-width: thin; /* Tuỳ chỉnh độ dày thanh cuộn trên Firefox */
+  scrollbar-color: #ccc transparent; /* Tuỳ chỉnh màu trên Firefox */
+}
 
-  .custom-svg {
-    width: 22px;
-    height: 22px;
-    stroke-width: 0.2;
-    stroke: currentColor;
-    fill: black;
-    margin-right: 2rem
-  }
-  
-  .custom-path {
-    clip-rule: evenodd;
-    fill-rule: evenodd;
-  }
-  .custom-title-svg {
-    width: 22px;
-    height: 22px;
-    stroke-width: 0.2;
-    stroke: currentColor;
-    fill: black;
-    margin-right: 2rem;
-  }
-  
-  .custom-title-path {
-    clip-rule: evenodd;
-    fill-rule: evenodd;
-  }
+.shortcut-links img {
+  width: 2rem;
+  margin-right: 2rem;
+}
+.side-link {
+  display: flex;
+  align-items: center;
+  padding: 15px 10px;
+  border-radius: 25px;
+  cursor: pointer;
+}
+.side-link-home {
+  display: flex;
+  align-items: center;
+  border-radius: 25px;
+  height: 5rem;
+  padding: 15px 10px;
+}
+.sidebar hr {
+  border: 0;
+  height: 1px;
+  background: #ccc;
+  width: 85%;
+}
+.shortcut-links h3 {
+  font-size: 16px;
+  margin: 1rem 1rem 0;
+  color: black;
+}
+.subscribed-list h3 {
+  font-size: 16px;
+  margin: 1rem 1rem 0;
+  color: black;
+}
+
+.subscribed-list img {
+  width: 2.5rem;
+  border-radius: 50%;
+  margin-right: 2rem;
+}
+
+.small-sidebar {
+  width: 5%;
+}
+
+.small-sidebar p {
+  display: none;
+}
+
+.small-sidebar h3 {
+  display: none;
+}
+
+.small-sidebar hr {
+  width: 50%;
+  margin-bottom: 2.5rem;
+}
+
+.side-link-home.active {
+  background: rgb(240, 237, 237);
+  width: 85%;
+  border-radius: 1rem;
+  padding: 0.6rem 1rem;
+  transition: 0.2s;
+}
+
+.side-link:hover {
+  background: rgb(240, 237, 237);
+  width: 85%;
+  border-radius: 1rem;
+}
+.side-link-home:hover {
+  background: rgb(205, 203, 203);
+  width: 85%;
+  border-radius: 1rem;
+}
+
+.custom-svg {
+  width: 22px;
+  height: 22px;
+  stroke-width: 0.2;
+  stroke: currentColor;
+  fill: black;
+  margin-right: 2rem;
+}
+
+.custom-path {
+  clip-rule: evenodd;
+  fill-rule: evenodd;
+}
+.custom-title-svg {
+  width: 22px;
+  height: 22px;
+  stroke-width: 0.2;
+  stroke: currentColor;
+  fill: black;
+  margin-right: 2rem;
+}
+
+.custom-title-path {
+  clip-rule: evenodd;
+  fill-rule: evenodd;
+}
