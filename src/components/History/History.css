@@ -10,7 +10,6 @@
 
 .history-header {
   display: flex;
-  /* align-items: center; */
   justify-content: space-between;
   margin-bottom: 15px;
 }
@@ -133,8 +132,60 @@
   font-size: 14px;
   transition: 0.3s;
   background: transparent;
+  display: flex;
+  align-items: center;
+  margin-right: 2rem;
 }
 
 .clear-all:hover {
   background: rgb(184, 180, 180);
+}
+
+.history-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.history-search {
+  display: flex;
+  align-items: center;
+}
+
+.history-search input {
+  border: none;
+  outline: none;
+  width: 200px;
+}
+
+.history-icon {
+  font-size: 3rem;
+  margin-right: 1rem;
+}
+
+.history-controller {
+  display: flex;
+  flex-direction: column;
+  margin-left: 5rem;
+  gap: 2rem;
+}
+
+.history-controller-btn {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  margin-left: 1rem;
+}
+
+.history-controller-btn div {
+  display: flex;
+  align-items: center;
+}
+
+.history-controller-btn div button {
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.icon {
+  font-size: 25px;
 }

@@ -5,13 +5,10 @@ import simon from "../../assets/simon.png";
 import tom from "../../assets/tom.png";
 import megan from "../../assets/megan.png";
 import cameron from "../../assets/cameron.png";
-import { useNavigate } from "react-router";
 
 export default function Sidebar({ sidebar, category, setCategory }) {
-
   const navigate = useNavigate();
   console.log("Sidebar Props:", { sidebar, category, setCategory });
-
 
   const handleToSettings = () => {
     navigate("/setting");
@@ -310,7 +307,7 @@ export default function Sidebar({ sidebar, category, setCategory }) {
 
           <hr />
         </div>
-        
+
         <hr />
         <div
           className={`side-link ${category === 10 ? "active" : ""}`}
@@ -329,8 +326,6 @@ export default function Sidebar({ sidebar, category, setCategory }) {
           <p>Settings</p>
         </div>
       </div>
-
-      </div>
-
+    </div>
   );
 }

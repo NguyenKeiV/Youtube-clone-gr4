@@ -4,6 +4,9 @@ import moment from "moment";
 import "./History.css";
 import { value_converter } from "../../data";
 import { RiDeleteBin6Line } from "react-icons/ri";
+import { CiSearch } from "react-icons/ci";
+import { IoPauseOutline } from "react-icons/io5";
+import { IoSettingsOutline } from "react-icons/io5";
 
 export default function History() {
   const [history, setHistory] = useState([]);
@@ -32,7 +35,9 @@ export default function History() {
   return (
     <div className="history-page">
       <h1>Watch History</h1>
-      <h3>Today</h3>
+      <div className="history-container">
+        <h3>Today</h3>
+      </div>
       <div className="history-header">
         <div>
           {history.length === 0 ? (
@@ -69,12 +74,33 @@ export default function History() {
           )}
         </div>
 
-        <div>
-          {history.length > 0 && (
-            <button onClick={clearHistory} className="clear-all">
-              <RiDeleteBin6Line /> Clear All
-            </button>
-          )}
+        <div className="history-controller">
+          <div className="history-search">
+            <CiSearch className="history-icon" />
+            <input type="text" placeholder="Search watch history" />
+          </div>
+          <div className="clear">
+            {history.length > 0 && (
+              <button onClick={clearHistory} className="clear-all">
+                <RiDeleteBin6Line className="icon" /> Clear all watch history
+              </button>
+            )}
+          </div>
+          <div className="history-controller-btn">
+            <div>
+              <IoPauseOutline className="icon" />
+              <button>Pause watch history</button>
+            </div>
+            <div>
+              <IoSettingsOutline className="icon" />
+              <button>Manage all history</button>
+            </div>
+          </div>
+          <div>
+            <a href="#">Comments</a>
+            <a href="#">Posts</a>
+            <a href="#">Live chat</a>
+          </div>
         </div>
       </div>
     </div>
