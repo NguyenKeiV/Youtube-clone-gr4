@@ -2,10 +2,6 @@ import "./PlayVideo.css";
 import like from "../../assets/like.png";
 import dislike from "../../assets/dislike.png";
 import share from "../../assets/share.png";
-// import save from "../../assets/save.png";
-// import download from "../../assets/download.png";
-// import clip from "../../assets/cut.png";
-// import report from "../../assets/flag.png";
 import more from "../../assets/more.png";
 import { useEffect, useState } from "react";
 import { API_KEY, value_converter } from "../../data";
@@ -24,6 +20,8 @@ export default function PlayVideo() {
     const videoDetails_url = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=${videoId}&key=${API_KEY}`;
     const response = await fetch(videoDetails_url);
     const data = await response.json();
+    
+    
     if (data.items.length > 0) {
       setVideoData(data.items[0]);
       saveToHistory(data.items[0]); // Lưu video vào lịch sử

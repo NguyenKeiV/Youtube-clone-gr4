@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
-import moment from "moment";
+// import moment from "moment";
 import "./History.css";
 import { value_converter } from "../../data";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { CiSearch } from "react-icons/ci";
 import { IoPauseOutline } from "react-icons/io5";
 import { IoSettingsOutline } from "react-icons/io5";
+import { PiDotsThreeVerticalBold } from "react-icons/pi";
 
 export default function History() {
   const [history, setHistory] = useState([]);
@@ -67,6 +68,9 @@ export default function History() {
                     >
                       x
                     </button>
+                    <button>
+                      <PiDotsThreeVerticalBold />
+                    </button>
                   </div>
                 </div>
               ))}
@@ -96,7 +100,7 @@ export default function History() {
               <button>Manage all history</button>
             </div>
           </div>
-          <div>
+          <div className="history-manage">
             <a href="#">Comments</a>
             <a href="#">Posts</a>
             <a href="#">Live chat</a>

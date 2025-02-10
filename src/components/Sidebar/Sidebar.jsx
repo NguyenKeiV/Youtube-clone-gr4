@@ -14,6 +14,10 @@ export default function Sidebar({ sidebar, category, setCategory }) {
     navigate("/setting");
   };
 
+  const handleToTrending = () => {
+    navigate("/trending");
+  };
+
   return (
     <div className={`sidebar ${sidebar ? "" : "small-sidebar"}`}>
       <div className="shortcut-links">
@@ -225,7 +229,7 @@ export default function Sidebar({ sidebar, category, setCategory }) {
           </h3>
           <div
             className={`side-link ${category === 17 ? "active" : ""}`}
-            onClick={() => setCategory(17)}
+            onClick={handleToTrending}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"

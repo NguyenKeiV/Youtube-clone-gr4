@@ -1,0 +1,103 @@
+/* Trang Trending */
+.trending-page {
+  width: 70%; /* Tăng độ rộng */
+  max-width: 900px; /* Giới hạn tối đa để không quá to */
+  margin: auto;
+  padding: 20px;
+}
+
+/* Menu tab */
+.tab-menu {
+  display: flex;
+  justify-content: center; /* Căn giữa tab */
+  gap: 25px; /* Giãn khoảng cách giữa các tab */
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 10px;
+}
+
+.tab-menu button {
+  background: none;
+  border: none;
+  padding: 12px 18px;
+  font-size: 18px; /* Làm to chữ hơn */
+  cursor: pointer;
+  font-weight: 600;
+  color: #555;
+}
+
+.tab-menu .active {
+  font-weight: bold;
+  border-bottom: 3px solid red;
+  color: red;
+}
+
+/* Danh sách video: Hiển thị dọc */
+.video-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center; /* Căn giữa danh sách */
+}
+
+/* Thẻ video */
+.video-card {
+  display: flex;
+  align-items: center;
+  width: 100%; /* Làm to video theo chiều ngang */
+  background: white;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.video-card:hover {
+  transform: scale(1.02);
+}
+
+/* Ảnh thumbnail */
+.thumbnail {
+  width: 220px; /* Tăng kích thước */
+  height: 120px;
+  border-radius: 12px;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+/* Thông tin video */
+.video-info {
+  flex: 1;
+}
+
+.video-info h3 {
+  font-size: 18px;
+  margin: 5px 0;
+  color: #333;
+}
+
+.video-info p {
+  font-size: 16px;
+  color: gray;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .trending-page {
+    width: 90%;
+  }
+
+  .thumbnail {
+    width: 180px;
+    height: 100px;
+  }
+
+  .video-card {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .thumbnail {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+}
