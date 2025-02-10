@@ -6,11 +6,9 @@ import tom from "../../assets/tom.png";
 import megan from "../../assets/megan.png";
 import cameron from "../../assets/cameron.png";
 
-
 export default function Sidebar({ sidebar, category, setCategory }) {
   const navigate = useNavigate();
   console.log("Sidebar Props:", { sidebar, category, setCategory });
-
 
   const handleToSettings = () => {
     navigate("/setting");
