@@ -1,0 +1,140 @@
+/* Định dạng trang history */
+.history-page {
+  max-width: 900px;
+  margin-left: 9rem;
+  padding: 4rem;
+  display: grid;
+  row-gap: 3rem;
+  /* height: 100vh; */
+}
+
+.history-header {
+  display: flex;
+  /* align-items: center; */
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.history-header h2 {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* Khi không có video */
+.empty-history {
+  display: inline-block;
+  font-size: 16px;
+  color: gray;
+  margin-top: 20px;
+  margin-left: 450px;
+  /* width: 50%; */
+}
+
+/* Danh sách video */
+.history-feed {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Video card */
+.history-card {
+  display: flex;
+  background: #fff;
+  padding: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+  position: relative;
+}
+
+/* Thumbnail */
+.history-thumbnail {
+  width: 246px;
+  height: 138px;
+  object-fit: cover;
+  border-radius: 7px;
+}
+
+/* Thông tin video */
+.history-info {
+  flex: 1;
+  margin-left: 12px;
+  margin-top: 5px;
+}
+
+.video-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #0f0f0f;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Chỉ hiển thị 2 dòng */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis; /* Thêm dấu ... nếu quá dài */
+  line-height: 1.4;
+  max-width: 300px; /* Giới hạn chiều rộng */
+}
+
+.history-info h2 {
+  font-size: 18px;
+  font-weight: 400px;
+  margin: 0;
+  color: #0f0f0f;
+}
+
+.history-info p {
+  font-size: 13px;
+  color: #909090;
+  margin-top: 1rem;
+}
+
+.video-description {
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Giới hạn tối đa 2 dòng */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 400px;
+}
+
+/* Nút xóa video */
+.btn-controller {
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: 80px;
+}
+
+.remove-btn {
+  background: transparent;
+  border: none;
+  font-size: 30px;
+  font-weight: normal;
+  color: #606060;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  transition: background 0.3s, transform 0.2s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.remove-btn:hover {
+  background: rgba(0, 0, 0, 0.1);
+  color: black;
+}
+
+.clear-all {
+  color: black;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: 0.3s;
+  background: transparent;
+}
+
+.clear-all:hover {
+  background: rgb(184, 180, 180);
+}
