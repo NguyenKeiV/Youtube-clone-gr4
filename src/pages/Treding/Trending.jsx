@@ -2,8 +2,9 @@ import { useEffect, useState } from "react";
 import TabMenu from "../../components/TableMenu/TableMenu";
 import VideoCard from "../../components/VideoCard/VideoCard";
 import "./Trending.css"; // Import CSS
+import { API_KEY } from "../../data";
 
-const API_KEY = "AIzaSyDfqwRXWU7PbTv8_3dETi3a_SF8JPiYTCo";
+
 const BASE_URL = "https://www.googleapis.com/youtube/v3/videos";
 
 const categories = {
