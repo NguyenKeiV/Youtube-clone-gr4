@@ -14,7 +14,7 @@
     flex-shrink: 0;
     background-color: transparent;
     border: none;
-    font-size: 20px;
+    font-size: 20px;  
     
   }
   
@@ -59,15 +59,12 @@
     font-weight: 500;
     
   }
-  .category-button.active {
-    
-    color: black;
-  }
   .category-button-home.active {
     background-color: black;
     color: white;
   }
   .category-button.active {
+    color: black;
     background-color: #f1f1f1;
     
   }

@@ -11,6 +11,8 @@ import SearchFeed from "./components/SearchFeed/SearchFeed";
 import NotFoundPage from "./components/Error/Error";
 // import VideoS from "./pages/Video copy/VideoS";
 
+import Trending from "./pages/Treding/Trending";
+
 function App() {
   const [sidebar, setSidebar] = useState(true);
   const [category, setCategory] = useState(0);
@@ -19,7 +21,6 @@ function App() {
     <>
      
       <Navbar setSidebar={setSidebar} />
-
 
       <Routes>
         <Route
@@ -33,9 +34,29 @@ function App() {
           }
         />
         <Route path="/video/:categoryId/:videoId" element={<Video />} />
-        <Route path="/search/:searchTerm" element={<SearchFeed />} />
+
         <Route path="/404" element={<NotFoundPage />} />
         {/* <Route path="/video/:videoId" element={<VideoS />} /> */}
+
+        <Route
+          path="/search/:searchTerm"
+          element={
+            <SearchFeed
+              sidebar={sidebar}
+              category={category}
+              setCategory={setCategory}
+            />
+          }
+        />
+
+
+        <Route path="/trending" element={<Trending sidebar={sidebar} />} />
+
+
+        <Route path="/history" element={<HistoryPage />} />
+       
+        <Route path="/setting" element={<Setting sidebar={sidebar}/>} />
+
       </Routes>
       
     </>
