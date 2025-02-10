@@ -2,10 +2,16 @@ import { Route, Routes } from "react-router";
 import Navbar from "./components/Navbar/Navbar";
 import Home from "./pages/Home/Home";
 import Video from "./pages/Video/Video";
+
 // import Toolbar from "./components/ToolBar/Toolbar";
+
 import { useState } from "react";
 import SearchFeed from "./components/SearchFeed/SearchFeed";
+
 import HistoryPage from "./pages/HistoryPage/HistoryPage";
+
+
+import Setting from "./pages/Setting/Setting";
 
 function App() {
   const [sidebar, setSidebar] = useState(true);
@@ -14,6 +20,7 @@ function App() {
   return (
     <>
       <Navbar setSidebar={setSidebar} />
+
 
       <Routes>
         <Route
@@ -37,7 +44,11 @@ function App() {
             />
           }
         />
+
         <Route path="/history" element={<HistoryPage />} />
+       
+        <Route path="/setting" element={<Setting sidebar={sidebar}/>} />
+
       </Routes>
     </>
   );

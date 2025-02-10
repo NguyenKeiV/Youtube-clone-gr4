@@ -16,10 +16,10 @@ export default function Home({ sidebar, category, setCategory }) {
       />
 
       <div className={`container ${sidebar ? "" : "large-container"} `}>
+
         <div className="toolbar">
           <Toolbar category={category} setCategory={setCategory} />
         </div>
-
         <div className="feed-container">
           <Feed category={category} />
         </div>
