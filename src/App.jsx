@@ -2,7 +2,7 @@ import { Route, Routes } from "react-router";
 import Navbar from "./components/Navbar/Navbar";
 import Home from "./pages/Home/Home";
 import Video from "./pages/Video/Video";
-import Toolbar from "./components/ToolBar/Toolbar";
+// import Toolbar from "./components/ToolBar/Toolbar";
 import { useState } from "react";
 import SearchFeed from "./components/SearchFeed/SearchFeed";
 import Login from "./pages/Login/Login";
