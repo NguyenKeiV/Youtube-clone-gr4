@@ -13,6 +13,8 @@ import HistoryPage from "./pages/HistoryPage/HistoryPage";
 
 import Setting from "./pages/Setting/Setting";
 
+import Trending from "./pages/Treding/Trending";
+
 function App() {
   const [sidebar, setSidebar] = useState(true);
   const [category, setCategory] = useState(0);
@@ -20,7 +22,6 @@ function App() {
   return (
     <>
       <Navbar setSidebar={setSidebar} />
-
 
       <Routes>
         <Route
@@ -45,9 +46,14 @@ function App() {
           }
         />
 
+
+        <Route path="/trending" element={<Trending sidebar={sidebar} />} />
+
+
         <Route path="/history" element={<HistoryPage />} />
        
         <Route path="/setting" element={<Setting sidebar={sidebar}/>} />
+
 
       </Routes>
     </>
