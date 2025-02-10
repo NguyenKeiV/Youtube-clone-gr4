@@ -1,17 +1,15 @@
-import { Route, Routes } from "react-router";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import Home from "./pages/Home/Home";
 import Video from "./pages/Video/Video";
+
 
 // import Toolbar from "./components/ToolBar/Toolbar";
 
 import { useState } from "react";
 import SearchFeed from "./components/SearchFeed/SearchFeed";
-
-import HistoryPage from "./pages/HistoryPage/HistoryPage";
-
-
-import Setting from "./pages/Setting/Setting";
+import NotFoundPage from "./components/Error/Error";
+// import VideoS from "./pages/Video copy/VideoS";
 
 import Trending from "./pages/Treding/Trending";
 
@@ -21,6 +19,7 @@ function App() {
 
   return (
     <>
+     
       <Navbar setSidebar={setSidebar} />
 
       <Routes>
@@ -35,6 +34,10 @@ function App() {
           }
         />
         <Route path="/video/:categoryId/:videoId" element={<Video />} />
+
+        <Route path="/404" element={<NotFoundPage />} />
+        {/* <Route path="/video/:videoId" element={<VideoS />} /> */}
+
         <Route
           path="/search/:searchTerm"
           element={
@@ -54,10 +57,10 @@ function App() {
        
         <Route path="/setting" element={<Setting sidebar={sidebar}/>} />
 
-
       </Routes>
+      
     </>
   );
 }
 
-export default App;
+export default App; 
