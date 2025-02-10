@@ -5,10 +5,13 @@ import simon from "../../assets/simon.png";
 import tom from "../../assets/tom.png";
 import megan from "../../assets/megan.png";
 import cameron from "../../assets/cameron.png";
+import { useNavigate } from "react-router";
 
 export default function Sidebar({ sidebar, category, setCategory }) {
 
   const navigate = useNavigate();
+  console.log("Sidebar Props:", { sidebar, category, setCategory });
+
 
   const handleToSettings = () => {
     navigate("/setting");
@@ -82,10 +85,7 @@ export default function Sidebar({ sidebar, category, setCategory }) {
             />
           </svg>
         </h3>
-        <div
-          className={`side-link ${category === 17 ? "active" : ""}`}
-          onClick={() => setCategory(17)}
-        >
+        <div className="side-link" onClick={() => navigate("/history")}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
