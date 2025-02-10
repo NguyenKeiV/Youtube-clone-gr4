@@ -5,7 +5,7 @@ import logo from "../../assets/logo.png";
 import upload_icon from "../../assets/upload.png";
 // import more_icon from "../../assets/voice-search.png";
 import notification_icon from "../../assets/notification.png";
-import profile_icon from "../../assets/jack.png";
+// import profile_icon from "../../assets/jack.png";
 import { Link } from "react-router";
 import SearchBar from "../SearchBar/SearchBar";
 
@@ -42,7 +42,11 @@ export default function Navbar({ setSidebar }) {
         </div>
         <img src={notification_icon} alt="" />
 
-        <img src={profile_icon} className="user-icon" alt="" />
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/1144/1144760.png"
+          className="user-icon"
+          alt=""
+        />
       </div>
     </nav>
   );

@@ -5,6 +5,7 @@ import Video from "./pages/Video/Video";
 import Toolbar from "./components/ToolBar/Toolbar";
 import { useState } from "react";
 import SearchFeed from "./components/SearchFeed/SearchFeed";
+import Login from "./pages/Login/Login";
 // import VideoS from "./pages/Video copy/VideoS";
 
 function App() {
@@ -12,12 +13,12 @@ function App() {
   return (
     <>
       <Navbar setSidebar={setSidebar} />
-      
+
       <Routes>
-      
         <Route path="/" element={<Home sidebar={sidebar} />} />
         <Route path="/video/:categoryId/:videoId" element={<Video />} />
         <Route path="/search/:searchTerm" element={<SearchFeed />} />
+        <Route path="Login" element={<Login />} />
         {/* <Route path="/video/:videoId" element={<VideoS />} /> */}
       </Routes>
     </>
