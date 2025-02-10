@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom"; 
 import "./Feed.css";
 import { API_KEY, value_converter } from "../../data";
 import { useCallback, useEffect, useRef, useState } from "react";
@@ -11,64 +11,62 @@ export default function Feed({ category }) {
   const observer = useRef();
   const navigate = useNavigate(); 
 
-  // Hàm Fetch API xử lý lỗi 403
   const fetchData = useCallback(
     async (pageToken = "") => {
-      if (loading) return; // Tránh gọi API liên tục
       setLoading(true);
-
       const videoList_url = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet,contentDetails,statistics&chart=mostPopular&maxResults=10&regionCode=US&videoCategoryId=${category}&pageToken=${pageToken}&key=${API_KEY}`;
 
       try {
         const response = await fetch(videoList_url);
 
+        // Kiểm tra lỗi 403 (Quota exceeded hoặc không có quyền truy cập)
         if (response.status === 403) {
           console.error("Lỗi 403: Quota exceeded hoặc không có quyền truy cập");
-          navigate("/404"); 
+          navigate("/404"); // Chuyển hướng đến trang 404
           return;
         }
 
+        // Kiểm tra nếu API trả về lỗi khác
         if (!response.ok) {
-          throw new Error(`Error ${response.status}: Failed to fetch data`);
+          throw new Error(`Lỗi ${response.status}: Không thể lấy dữ liệu`);
         }
 
         const result = await response.json();
+
         if (!result.items || result.items.length === 0) {
-          throw new Error("No videos found");
+          throw new Error("Không tìm thấy video nào");
         }
 
         setTimeout(() => {
           setData((prevData) => [...prevData, ...result.items]);
           setNextPageToken(result.nextPageToken || null);
           setLoading(false);
-        }, 1000); // Giữ spinner hiển thị trong 1s
+        }, 1000); // Hiển thị loading trong 1 giây
       } catch (error) {
-        console.error("Error fetching data:", error);
+        console.error("Lỗi khi gọi API:", error);
         setLoading(false);
         navigate("/404"); 
       }
     },
-    [category, loading, navigate]
+    [category, navigate]
   );
 
-  // Gọi API khi `category` thay đổi
   useEffect(() => {
-    setData([]); // Reset dữ liệu
+    setData([]); 
     fetchData();
   }, [category, fetchData]);
 
-  // Infinite Scroll
   const lastElementRef = useCallback(
     (node) => {
       if (observer.current) observer.current.disconnect();
       observer.current = new IntersectionObserver((entries) => {
-        if (entries[0].isIntersecting && nextPageToken && !loading) {
+        if (entries[0].isIntersecting && nextPageToken) {
           fetchData(nextPageToken);
         }
       });
       if (node) observer.current.observe(node);
     },
-    [nextPageToken, fetchData, loading]
+    [nextPageToken, fetchData]
   );
 
   return (
@@ -82,7 +80,7 @@ export default function Feed({ category }) {
             className="card"
             ref={isLastItem ? lastElementRef : null}
           >
-            <img src={item.snippet.thumbnails.medium.url} alt={item.snippet.title} />
+            <img src={item.snippet.thumbnails.medium.url} alt="" />
             <h2>{item.snippet.title}</h2>
             <h3>{item.snippet.channelTitle}</h3>
             <p>

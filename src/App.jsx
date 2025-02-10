@@ -3,10 +3,12 @@ import Navbar from "./components/Navbar/Navbar";
 import Home from "./pages/Home/Home";
 import Video from "./pages/Video/Video";
 
+
 // import Toolbar from "./components/ToolBar/Toolbar";
 
 import { useState } from "react";
 import SearchFeed from "./components/SearchFeed/SearchFeed";
+import NotFoundPage from "./components/Error/Error";
 // import VideoS from "./pages/Video copy/VideoS";
 
 function App() {
@@ -32,6 +34,7 @@ function App() {
         />
         <Route path="/video/:categoryId/:videoId" element={<Video />} />
         <Route path="/search/:searchTerm" element={<SearchFeed />} />
+        <Route path="/404" element={<NotFoundPage />} />
         {/* <Route path="/video/:videoId" element={<VideoS />} /> */}
       </Routes>
       
