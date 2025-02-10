@@ -7,11 +7,14 @@ import megan from "../../assets/megan.png";
 import cameron from "../../assets/cameron.png";
 
 export default function Sidebar({ sidebar, category, setCategory }) {
-
   const navigate = useNavigate();
 
   const handleToSettings = () => {
     navigate("/setting");
+  };
+
+  const handleToTrending = () => {
+    navigate("/trending");
   };
 
   return (
@@ -228,7 +231,7 @@ export default function Sidebar({ sidebar, category, setCategory }) {
           </h3>
           <div
             className={`side-link ${category === 17 ? "active" : ""}`}
-            onClick={() => setCategory(17)}
+            onClick={handleToTrending}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -310,7 +313,7 @@ export default function Sidebar({ sidebar, category, setCategory }) {
 
           <hr />
         </div>
-        
+
         <hr />
         <div
           className={`side-link ${category === 10 ? "active" : ""}`}
@@ -329,8 +332,6 @@ export default function Sidebar({ sidebar, category, setCategory }) {
           <p>Settings</p>
         </div>
       </div>
-
-      </div>
-
+    </div>
   );
 }

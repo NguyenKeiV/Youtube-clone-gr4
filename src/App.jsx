@@ -9,6 +9,7 @@ import { useState } from "react";
 import SearchFeed from "./components/SearchFeed/SearchFeed";
 // import VideoS from "./pages/Video copy/VideoS";
 import Setting from "./pages/Setting/Setting";
+import Trending from "./pages/Treding/Trending";
 function App() {
   const [sidebar, setSidebar] = useState(true);
   const [category, setCategory] = useState(0);
@@ -16,7 +17,6 @@ function App() {
   return (
     <>
       <Navbar setSidebar={setSidebar} />
-
 
       <Routes>
         <Route
@@ -41,7 +41,9 @@ function App() {
           }
         />
         {/* <Route path="/video/:videoId" element={<VideoS />} /> */}
-        <Route path="/setting" element={<Setting sidebar={sidebar}/>} />
+        <Route path="/setting" element={<Setting sidebar={sidebar} />} />
+
+        <Route path="/trending" element={<Trending sidebar={sidebar} />} />
       </Routes>
     </>
   );
