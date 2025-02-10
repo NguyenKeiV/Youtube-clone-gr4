@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import TabMenu from "../../components/TableMenu/TableMenu";
 import VideoCard from "../../components/VideoCard/VideoCard";
-import "./trending.css"; // Import CSS
+import "./Trending.css"; // Import CSS
 
 const API_KEY = "AIzaSyDfqwRXWU7PbTv8_3dETi3a_SF8JPiYTCo";
 const BASE_URL = "https://www.googleapis.com/youtube/v3/videos";
