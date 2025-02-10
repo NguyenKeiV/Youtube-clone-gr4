@@ -7,9 +7,14 @@ import Video from "./pages/Video/Video";
 
 import { useState } from "react";
 import SearchFeed from "./components/SearchFeed/SearchFeed";
-// import VideoS from "./pages/Video copy/VideoS";
+
+import HistoryPage from "./pages/HistoryPage/HistoryPage";
+
+
 import Setting from "./pages/Setting/Setting";
+
 import Trending from "./pages/Treding/Trending";
+
 function App() {
   const [sidebar, setSidebar] = useState(true);
   const [category, setCategory] = useState(0);
@@ -40,10 +45,16 @@ function App() {
             />
           }
         />
-        {/* <Route path="/video/:videoId" element={<VideoS />} /> */}
-        <Route path="/setting" element={<Setting sidebar={sidebar} />} />
+
 
         <Route path="/trending" element={<Trending sidebar={sidebar} />} />
+
+
+        <Route path="/history" element={<HistoryPage />} />
+       
+        <Route path="/setting" element={<Setting sidebar={sidebar}/>} />
+
+
       </Routes>
     </>
   );
