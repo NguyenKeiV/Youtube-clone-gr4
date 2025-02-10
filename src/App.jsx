@@ -5,7 +5,7 @@ import Video from "./pages/Video/Video";
 // import Toolbar from "./components/ToolBar/Toolbar";
 import { useState } from "react";
 import SearchFeed from "./components/SearchFeed/SearchFeed";
-// import VideoS from "./pages/Video copy/VideoS";
+import HistoryPage from "./pages/HistoryPage/HistoryPage";
 
 function App() {
   const [sidebar, setSidebar] = useState(true);
@@ -37,7 +37,7 @@ function App() {
             />
           }
         />
-        {/* <Route path="/video/:videoId" element={<VideoS />} /> */}
+        <Route path="/history" element={<HistoryPage />} />
       </Routes>
     </>
   );
