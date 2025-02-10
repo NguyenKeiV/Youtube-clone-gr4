@@ -331,6 +331,6 @@ export default function Sidebar({ sidebar, category, setCategory }) {
       </div>
 
       </div>
-    
+
   );
 }
