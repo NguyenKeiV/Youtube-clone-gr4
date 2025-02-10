@@ -1,6 +1,6 @@
 import React from "react";
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
-import "./ToolBar.css";
+import "./Toolbar.css";
 
 const ToolBar = ({ category, setCategory }) => {
   const slideLeft = () => {
@@ -13,7 +13,7 @@ const ToolBar = ({ category, setCategory }) => {
 
   return (
     <div className="tool-bar">
-      {/* Nút trượt trái */}
+      {/* Nút trượt trái */}  
       <button className="tool-button" onClick={slideLeft}>
         <MdChevronLeft />
       </button>

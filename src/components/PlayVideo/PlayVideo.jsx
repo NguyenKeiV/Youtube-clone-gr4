@@ -2,10 +2,6 @@ import "./PlayVideo.css";
 import like from "../../assets/like.png";
 import dislike from "../../assets/dislike.png";
 import share from "../../assets/share.png";
-import save from "../../assets/save.png";
-import download from "../../assets/download.png";
-import clip from "../../assets/cut.png";
-import report from "../../assets/flag.png";
 import more from "../../assets/more.png";
 import { useEffect, useState } from "react";
 import { API_KEY, value_converter } from "../../data";
@@ -18,12 +14,34 @@ export default function PlayVideo() {
   const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(false);
   const [channelData, setChannelData] = useState(null);
   const [commentData, setCommentData] = useState([]);
+  const [videoData, setVideoData] = useState(null);
 
   const fetchVideoData = async () => {
     const videoDetails_url = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=${videoId}&key=${API_KEY}`;
-    await fetch(videoDetails_url)
-      .then((response) => response.json())
-      .then((data) => setApiData(data.items[0]));
+    const response = await fetch(videoDetails_url);
+    const data = await response.json();
+    
+    
+    if (data.items.length > 0) {
+      setVideoData(data.items[0]);
+      saveToHistory(data.items[0]); // Lưu video vào lịch sử
+    }
+  };
+
+  const saveToHistory = (video) => {
+    const videoInfo = {
+      id: video.id,
+      title: video.snippet.title,
+      thumbnail: video.snippet.thumbnails.medium.url,
+      channel: video.snippet.channelTitle,
+      publishedAt: video.snippet.publishedAt,
+      viewCount: video.statistics.viewCount,
+      description: video.snippet.description,
+    };
+
+    let history = JSON.parse(localStorage.getItem("watchHistory")) || [];
+    history = [videoInfo, ...history.filter((v) => v.id !== videoInfo.id)]; // Tránh trùng lặp
+    localStorage.setItem("watchHistory", JSON.stringify(history));
   };
 
   const toggleDescription = () => {
