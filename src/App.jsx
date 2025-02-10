@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import Home from "./pages/Home/Home";
 import Video from "./pages/Video/Video";
@@ -7,11 +7,7 @@ import Video from "./pages/Video/Video";
 
 import { useState } from "react";
 import SearchFeed from "./components/SearchFeed/SearchFeed";
-
-import HistoryPage from "./pages/HistoryPage/HistoryPage";
-
-
-import Setting from "./pages/Setting/Setting";
+// import VideoS from "./pages/Video copy/VideoS";
 
 function App() {
   const [sidebar, setSidebar] = useState(true);
@@ -19,6 +15,7 @@ function App() {
 
   return (
     <>
+     
       <Navbar setSidebar={setSidebar} />
 
 
@@ -34,24 +31,12 @@ function App() {
           }
         />
         <Route path="/video/:categoryId/:videoId" element={<Video />} />
-        <Route
-          path="/search/:searchTerm"
-          element={
-            <SearchFeed
-              sidebar={sidebar}
-              category={category}
-              setCategory={setCategory}
-            />
-          }
-        />
-
-        <Route path="/history" element={<HistoryPage />} />
-       
-        <Route path="/setting" element={<Setting sidebar={sidebar}/>} />
-
+        <Route path="/search/:searchTerm" element={<SearchFeed />} />
+        {/* <Route path="/video/:videoId" element={<VideoS />} /> */}
       </Routes>
+      
     </>
   );
 }
 
-export default App;
+export default App; 
